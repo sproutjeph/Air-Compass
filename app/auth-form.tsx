@@ -1,7 +1,7 @@
 "use client";
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { Auth } from "@supabase/auth-ui-react";
 import { Database } from "@/types/supabase";
 
 export default function AuthForm() {
@@ -15,7 +15,7 @@ export default function AuthForm() {
       theme="dark"
       showLinks={false}
       providers={[]}
-      redirectTo="http://localhost:3000/auth/callback"
+      redirectTo={process.env.REDIRECT_CALL_BACK_URL}
     />
   );
 }
