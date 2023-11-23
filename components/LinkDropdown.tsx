@@ -29,7 +29,7 @@ const LinkDropdown: FC<ILinkDropdown> = ({ data, onClose }) => {
 
   return (
     <div className="cursor-pointer flex flex-col gap-y-4">
-      <div className="text-gray-500 dark:text-gray-300  hover:text-white hover:bg-primary p-1 rounded-md">
+      <div className="text-gray-500 dark:text-gray-300  hover:text-black hover:bg-primary p-1 rounded-md">
         {data.group}
       </div>
 
@@ -41,8 +41,8 @@ const LinkDropdown: FC<ILinkDropdown> = ({ data, onClose }) => {
           <div key={child.title} className=" rounded-md">
             <div
               className={cn(
-                "flex justify-between p-1 rounded-md items-center group hover:bg-primary",
-                isActive && "bg-success-50 text-success hover:bg-success-100"
+                "flex justify-between p-2 rounded-md items-center group hover:bg-primary mb-6",
+                isActive && "bg-success"
               )}
               onClick={() => {
                 child.subMenu && toggleOpen(index);
@@ -52,7 +52,7 @@ const LinkDropdown: FC<ILinkDropdown> = ({ data, onClose }) => {
                 href={child.href}
                 className={cn(
                   "flex gap-2  group-hover:text-white",
-                  isActive ? "text-success" : "dark:text-gray-400 text-gray-600"
+                  isActive ? "text-white" : "dark:text-gray-400 text-gray-600"
                 )}
                 onClick={onClose}
               >

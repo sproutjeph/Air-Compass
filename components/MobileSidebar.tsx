@@ -45,7 +45,7 @@ const MobileSidebar: FC<MobileSidebarProps> = ({ isLanding }) => {
             <>
               <ModalHeader className="flex items-center gap-1">
                 <AcmeLogo />
-                <p className="font-bold text-inherit">J-sprout</p>
+                <p className="font-bold text-inherit">Clean Air</p>
               </ModalHeader>
               <ModalBody className="">
                 {isLanding ? (

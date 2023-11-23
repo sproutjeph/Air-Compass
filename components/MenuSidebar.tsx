@@ -12,7 +12,7 @@ const MenuSidebar: FC<MenuSidebarProps> = ({}) => {
     <aside className=" flex flex-col w-64  border-gray-600 border-r-1 border-dotted px- h-full overflow-y-scroll">
       <div className="flex items-center justify-center mt-4 ">
         <AcmeLogo />
-        <p className="font-bold text-inherit">J-Sprout</p>
+        <p className="font-bold text-inherit">Clean Air</p>
       </div>
       <div className="flex flex-col gap-2 justify-center mx-6 mt-8">
         {menuLinks.map((link, i) => (
