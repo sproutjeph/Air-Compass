@@ -63,7 +63,7 @@ export const menuLinks: IMenuLink[] = [
     children: [
       {
         title: "Dashboard",
-        href: "/dashboard/overview",
+        href: "/dashboard",
         Icon: LayoutDashboardIcon,
       },
       {

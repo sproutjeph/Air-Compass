@@ -71,7 +71,7 @@ export default function Avatar({
   };
 
   return (
-    <div>
+    <div className="">
       {avatarUrl ? (
         <Image
           width={size}

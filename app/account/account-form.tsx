@@ -78,7 +78,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
   }
 
   return (
-    <div className="form-widget">
+    <div className="bg-background">
       <Avatar
         uid={String(user?.id)}
         url={avatar_url}

@@ -1,13 +1,13 @@
 "use client";
 
 import { formatNumberWithCommas } from "@/lib/utils";
-import ReactApexChart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
 import { FC, useState } from "react";
 import useChartTheme from "./ChartTheme";
-// import dynamic from "next/dynamic";
-// const ReactApexChart = dynamic(() => import("react-apexcharts"), {
-//   ssr: false,
-// });
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 interface DonutChartProps {}
 
