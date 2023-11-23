@@ -12,10 +12,10 @@ export default function AuthForm() {
       supabaseClient={supabase}
       view="magic_link"
       appearance={{ theme: ThemeSupa }}
-      theme="dark"
+      theme="light"
       showLinks={false}
       providers={[]}
-      redirectTo="https://air-compass.vercel.app/auth/callback"
+      redirectTo={String(process.env.REDIRECT_CALL_BACK_URL)}
     />
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
 import {
   Navbar,
   NavbarContent,
@@ -10,60 +9,12 @@ import {
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import MobileSidebar from "./MobileSidebar";
 import NavbarSearch from "./NavbarSearch";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-import {
-  Session,
-  createClientComponentClient,
-} from "@supabase/auth-helpers-nextjs";
-import { Database } from "@/types/supabase";
+import React from "react";
 
-export default function AppNavbar({ session }: { session: Session | null }) {
-  const supabase = createClientComponentClient<Database>();
-
-  const [fullname, setFullname] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [username, setUsername] = useState<string | null>(null);
-  const [website, setWebsite] = useState<string | null>(null);
-  const [avatar_url, setAvatarUrl] = useState<string | null>(null);
-  const user = session?.user;
-
-  const getProfile = useCallback(async () => {
-    try {
-      setLoading(true);
-
-      const { data, error, status } = await supabase
-        .from("profiles")
-        .select(`full_name, username, website, avatar_url`)
-        .eq("id", String(user?.id))
-        .single();
-
-      if (error && status !== 406) {
-        throw error;
-      }
-
-      if (data) {
-        setFullname(data.full_name);
-        setUsername(data.username);
-        setWebsite(data.website);
-        setAvatarUrl(data.avatar_url);
-      }
-    } catch (error) {
-      alert("Error loading user data!");
-    } finally {
-      setLoading(false);
-    }
-  }, [user, supabase]);
-
-  useEffect(() => {
-    getProfile();
-  }, [user, getProfile]);
-
-  console.log(fullname);
-  console.log(username);
-  console.log(avatar_url);
-
+export default function AppNavbar() {
   return (
     <Navbar maxWidth="full" className="w-full">
       <NavbarContent as="div" justify="start" className="xl:hidden">

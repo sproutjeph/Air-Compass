@@ -59,7 +59,7 @@ const DonutChart: FC<DonutChartProps> = ({}) => {
       },
       legend: {
         position: "right",
-        offsetY: 5,
+        offsetY: 0,
         labels: {
           colors: ["inherit", "inherit", "inherit", "inherit"],
           useSeriesColors: false,
@@ -79,8 +79,8 @@ const DonutChart: FC<DonutChartProps> = ({}) => {
         position: "relative",
         width: "100%",
         height: "100%",
-        maxHeight: "480px",
-        maxWidth: "480px",
+        maxHeight: "500px",
+        maxWidth: "500px",
         marginRight: "auto",
         marginLeft: "auto",
       }}
