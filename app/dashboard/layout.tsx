@@ -1,3 +1,5 @@
+import MenuSidebar from "@/components/MenuSidebar";
+import AppNavbar from "@/components/Navbar";
 import { FC } from "react";
 
 interface DashboardLayoutProps {
@@ -8,10 +10,10 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
   return (
     <section className="min-h-full relative bg-white dark:bg-black">
       <div className="hidden xl:flex h-full xl:w-64 xl:flex-col xl:fixed xl:inset-y-0 z-80">
-        {/* <MenuSidebar /> */}
+        <MenuSidebar />
       </div>
       <main className="xl:pl-64 pb-10">
-        {/* <AppNavbar /> */}
+        <AppNavbar />
         {children}
       </main>
     </section>
