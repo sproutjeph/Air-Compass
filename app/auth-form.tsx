@@ -15,7 +15,7 @@ export default function AuthForm() {
       theme="light"
       showLinks={false}
       providers={[]}
-      redirectTo={String(process.env.REDIRECT_CALL_BACK_URL)}
+      redirectTo="https://air-compass.vercel.app/auth/callback"
     />
   );
 }
